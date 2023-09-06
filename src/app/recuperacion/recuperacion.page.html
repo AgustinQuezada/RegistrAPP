@@ -1,13 +1,31 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>recuperacion</ion-title>
-  </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-content class="ion-color-light">
+  <form action="">
     <ion-toolbar>
-      <ion-title size="large">recuperacion</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button default-href="#"></ion-back-button>
+      </ion-buttons>
+      <ion-title>RegistrAPP</ion-title>
     </ion-toolbar>
-  </ion-header>
+    <div class="ion-padding dev">
+      <img class="imagen" width="120rem" alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      <div class="subtitulo">
+        <h1>Recuperar contraseña</h1>
+        <p class="texto">Ingresa tu nombre de usuario para recuperar contraseña</p>
+      </div>
+      <ion-item>
+        <ion-input  placeholder="Ingresa tu nombre de usuario"></ion-input>
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-item><br><br>
+      <ion-button class="boton" expand="block">Recuperar</ion-button>
+    </div>
+  </form>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title> DUOC UC</ion-title><br>
+  </ion-toolbar>
+</ion-footer>
