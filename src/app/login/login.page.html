@@ -1,14 +1,18 @@
-<ion-content >
+<ion-content class="ion-padding"><br><br>
 
+<ion-card>
+  <ion-img
+  src="assets/icon/Registrapp.png"
+  alt="Logo"
+></ion-img>
+</ion-card> <br><br>
 
-
-  <ion-input label="Usuario" [(ngModel)]="usuario"  labelPlacement="stacked"
-    placeholder="Ingrese usuario"></ion-input>
-  <ion-input label="Password" labelPlacement="stacked"
-    placeholder="Ingrese contraseña" type="Password"></ion-input>
-  <ion-button color="secondary" (click)="Ingresar()">Iniciar sesion</ion-button>
-
-
-
+<ion-input label="Nombre de Usuario" [(ngModel)]="usuario" label-placement="floating" fill="outline" placeholder="Ingresar texto"></ion-input>
+<br><br>
+<ion-input label="contraseña"  label-placement="floating" fill="outline" placeholder="Ingresar texto"></ion-input>
+<br>
+<a href="#">¿Has olvidado tucontraseña?</a><br>
+<br><br>
+<ion-button color="warning" expand="block" (click)="Ingresar()">Iniciar sesion</ion-button><br>
 
 </ion-content>

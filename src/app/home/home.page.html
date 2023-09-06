@@ -1,4 +1,4 @@
-<ion-toolbar>
+<ion-toolbar  color="warning">
   <ion-buttons slot="secondary">
     <ion-button>
       <ion-icon slot="icon-only" name="person-circle"></ion-icon>
@@ -7,11 +7,11 @@
   <ion-title>RegistrApp</ion-title>
 </ion-toolbar>
 
-<ion-content>
+<ion-content class="ion-padding">
   
 
-  <h1> Bienvenido {{ usuario }}!</h1>
-  <p>Viernes. 08 de Septiembre</p>
+  <h1 style="text-align: center;"> Bienvenido {{ usuario }}!</h1><br>
+  <p style="margin-left: 12px;">Viernes. 08 de Septiembre</p>
 
   <ion-card>
     <ion-card-header>
@@ -20,9 +20,34 @@
     </ion-card-header>
   
     <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
+      Horario: 11:31 a 12:50 <br> Sala AV-V208
+    </ion-card-content>
+    <ion-button fill="clear" [disabled]="true">Registrar asistencia</ion-button>
+  </ion-card>
+<br>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Prog. Aplicaciones Moviles</ion-card-title>
+      <ion-card-subtitle>Juan Pulgar Gonzales</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Horario: 13:01 a 15:10 <br> Sala AV-V108
     </ion-card-content>
     <ion-button fill="clear">Registrar asistencia</ion-button>
   </ion-card>
+  <br>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Arquitectura</ion-card-title>
+      <ion-card-subtitle>Vicente Aranda Chacon</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Horario: 15:31 a 18:50 <br> Sala AV-V311
+    </ion-card-content>
+    <ion-button fill="clear" [disabled]="true">Registrar asistencia</ion-button>
+  </ion-card>
+  
 
 </ion-content>
