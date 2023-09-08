@@ -4,19 +4,21 @@
   </ion-card>
   <h1>INICIAR SESION</h1>
   <ion-item>
-    <ion-input label="Nombre de Usuario" [(ngModel)]="usuario" label-placement="floating" fill="outline"
-      placeholder="Ingresar texto"></ion-input>
+    <ion-input label="Nombre de Usuario" [(ngModel)]="usuario" label-placement="floating"
+      placeholder="Ingresa tu nombre de usuario"></ion-input>
     <ion-icon name="person-outline"></ion-icon>
   </ion-item>
+
   <br><br>
   <ion-item>
-    <ion-input label="Contraseña" label-placement="floating" fill="outline" placeholder="Ingresar texto"></ion-input>
+    <ion-input type="password" label="Contraseña" label-placement="floating"
+      placeholder="Ingresa tu nombre de usuario"></ion-input>
     <ion-icon name="lock-closed"></ion-icon>
   </ion-item>
   <br>
   <a [routerLink]="['/recuperacion']">¿Has olvidado tu contraseña?</a>
 
   <br><br>
-  <ion-button color="warning" expand="block" (click)="Ingresar()">Iniciar sesion</ion-button><br>
+  <ion-button color="warning" expand="block" (click)="Ingresar(); showLoading()">Iniciar sesion</ion-button><br>
 
 </ion-content>

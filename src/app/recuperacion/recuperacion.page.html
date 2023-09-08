@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
 </ion-header>
 
-<ion-content class="ion-color-light">
+<ion-content>
   <form action="">
     <ion-toolbar>
       <ion-buttons slot="start">
@@ -10,16 +10,19 @@
       <ion-title>RegistrAPP</ion-title>
     </ion-toolbar>
     <div class="ion-padding dev">
-      <img class="imagen" width="150rem" alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      <img class="imagen" width="150rem" alt="Silhouette of a person's head"
+        src="https://ionicframework.com/docs/img/demos/avatar.svg" />
       <div class="subtitulo">
-        <h1>Recupera tú contraseña</h1>
+        <h1>Reestablecer Contraseña</h1>
         <p class="texto">Ingresa tu nombre de usuario para recuperar la contraseña</p>
       </div><br>
       <ion-item>
-        <ion-input  placeholder="Ingresa tu nombre de usuario"></ion-input>
+        <ion-input label="Nombre de Usuario" placeholder="Ingresa tu nombre de usuario"
+          label-placement="floating"></ion-input>
         <ion-icon name="person-outline"></ion-icon>
       </ion-item><br><br><br>
-      <ion-button color="warning" class="boton" expand="block">Recuperar</ion-button>
+      <ion-button (click)="irPaginaPrincipal(); presentAlert() " color="warning" class="boton"
+        expand="block">Recuperar</ion-button>
     </div>
   </form>
 </ion-content>
