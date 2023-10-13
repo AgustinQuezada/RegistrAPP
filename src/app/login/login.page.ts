@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
-import { LoadingController } from '@ionic/angular';
+import { NavigationExtras, Router } from '@angular/router';
+//import { NavController } from '@ionic/angular';
+//import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -9,25 +10,22 @@ import { LoadingController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
-  usuario: string = '';
-
-  constructor(private navCtrl: NavController, private loadingCtrl: LoadingController) { }
-  Ingresar() {
-    this.navCtrl.navigateForward('/home', {
-      queryParams: {
-        value: this.usuario,
-      },
-    });
+  usuario = {
+    username: "",
+    password: ""
   }
 
-  async showLoading() {
-    const loading = await this.loadingCtrl.create({
-      message: 'Iniciando sesion, por favor espera...',
-      duration: 1000,
-    });
+  constructor(private router: Router) { }
 
-    loading.present();
+  IrHomePage() {
+    let navegationExtras: NavigationExtras = {
+      state: {
+        user: this.usuario
+      }
+    }
+    this.router.navigate(['/home'], navegationExtras)
   }
+
 
   ngOnInit() {
   }
