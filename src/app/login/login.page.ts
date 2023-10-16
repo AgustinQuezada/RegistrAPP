@@ -10,7 +10,7 @@ import { NavigationExtras, Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
 
-  usuario = {
+  user = {
     username: "",
     password: ""
   }
@@ -18,13 +18,13 @@ export class LoginPage implements OnInit {
   constructor(private router: Router) { }
 
   IrHomePage() {
-    let navegationExtras: NavigationExtras = {
-      state: {
-        user: this.usuario
+      let navegationExtras: NavigationExtras = {
+        state: {
+          user: this.user
+        }
       }
-    }
-    this.router.navigate(['/home'], navegationExtras)
-  }
+      this.router.navigate(['/home'], navegationExtras);
+    } 
 
 
   ngOnInit() {

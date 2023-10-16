@@ -9,13 +9,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class HomePage {
 
   state:any;
-  usuario:any;
+  user:any;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router) {
     this.activatedRoute.queryParams.subscribe(params => {
       this.state = this.router.getCurrentNavigation()?.extras.state
-      this.usuario = this.state.usuario
-      console.log(this.usuario);
+      this.user = this.state.user
+      console.log(this.user);
     })
   }
 }
