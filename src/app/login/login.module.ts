@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { IonicModule } from '@ionic/angular';
-
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
@@ -14,7 +14,8 @@ import { LoginPage } from './login.page';
     FormsModule,
     IonicModule,
     LoginPageRoutingModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatCheckboxModule,
   ],
   declarations: [LoginPage]
 })

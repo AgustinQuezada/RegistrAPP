@@ -21,9 +21,8 @@
 }
 
 .boton {
-    padding-left: 20px; 
-  padding-right: 20px;
-  font-weight: bold;
-  display: table-cell;
-  max-width: 600px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    font-weight: bold;
 }

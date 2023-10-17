@@ -9,14 +9,19 @@
     <ion-icon name="person-outline"></ion-icon>
   </ion-item>
 
-  <br><br>
+  <br>
   <ion-item>
     <ion-input type="password" label="Contraseña" label-placement="floating"
       placeholder="Ingresa tu nombre de usuario"></ion-input>
     <ion-icon name="lock-closed"></ion-icon>
   </ion-item>
   <br>
-  <a [routerLink]="['/recuperacion']">¿Has olvidado tu contraseña?</a>
+  <section class="seccion">
+    <mat-checkbox color="primary" class="example-margin">Recordar</mat-checkbox>
+    <a class="a" [routerLink]="['/recuperacion']">¿Olvidaste tu contraseña?</a>
+  </section>
+
+
 
   <br><br>
   <ion-button color="warning" expand="block" (click)="IrHomePage()">Iniciar sesion</ion-button>
