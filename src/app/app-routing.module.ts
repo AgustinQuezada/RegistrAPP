@@ -18,10 +18,17 @@ const routes: Routes = [
   {
     path: 'recuperacion',
     loadChildren: () => import('./recuperacion/recuperacion.module').then( m => m.RecuperacionPageModule)
-  },  {
+  },
+  {
     path: 'error404',
     loadChildren: () => import('./error404/error404.module').then( m => m.Error404PageModule)
   },
+  {
+    path: '**',
+    redirectTo: 'error404',
+    pathMatch: 'full'
+  },
+  
 
 ];
 
