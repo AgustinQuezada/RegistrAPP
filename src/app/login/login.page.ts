@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-//import { NavController } from '@ionic/angular';
-//import { LoadingController } from '@ionic/angular';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -10,24 +9,30 @@ import { NavigationExtras, Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
 
+  validacion: FormGroup;
+
   user = {
     username: "",
     password: ""
   }
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private formBuilder: FormBuilder) {
+    // Mueve la creación del formulario aquí
+    this.validacion = this.formBuilder.group({
+      username: ['', [Validators.required]],
+      password: ['', [Validators.required]]
+    });
+  }
 
   IrHomePage() {
-      let navegationExtras: NavigationExtras = {
-        state: {
-          user: this.user
-        }
+    let navegationExtras: NavigationExtras = {
+      state: {
+        user: this.user
       }
-      this.router.navigate(['/home'], navegationExtras);
-    } 
-
+    }
+    this.router.navigate(['/home'], navegationExtras);
+  } 
 
   ngOnInit() {
   }
-
 }
