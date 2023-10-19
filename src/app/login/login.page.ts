@@ -11,6 +11,7 @@ export class LoginPage implements OnInit {
     username: "",
     password: ""
   }
+  loginForm: any;
 
   constructor(private router: Router) {}
 
@@ -26,6 +27,11 @@ export class LoginPage implements OnInit {
     this.router.navigate(['/home'], navegationExtras);
   } 
 
+  login() {
+    if (this.loginForm.form.valid) {
+      // Manejar la lógica de inicio de sesión
+    }
+  }
   ngOnInit() {
   }
 }
