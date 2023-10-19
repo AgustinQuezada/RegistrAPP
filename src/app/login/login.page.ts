@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -9,12 +9,15 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class LoginPage implements OnInit {
 
+  
+  
   validacion: FormGroup;
 
   user = {
     username: "",
     password: ""
   }
+  loginForm: any;
 
   constructor(private router: Router, private formBuilder: FormBuilder) {
     this.validacion = this.formBuilder.group({
@@ -36,6 +39,11 @@ export class LoginPage implements OnInit {
     this.router.navigate(['/home'], navegationExtras);
   } 
 
+  login() {
+    if (this.loginForm.form.valid) {
+      // Manejar la lógica de inicio de sesión
+    }
+  }
   ngOnInit() {
   }
 }
