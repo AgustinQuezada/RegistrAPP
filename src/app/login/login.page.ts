@@ -17,7 +17,6 @@ export class LoginPage implements OnInit {
   }
 
   constructor(private router: Router, private formBuilder: FormBuilder) {
-    // Mueve la creación del formulario aquí
     this.validacion = this.formBuilder.group({
       username: ['', [Validators.required]],
       password: ['', [Validators.required]]
@@ -25,11 +24,15 @@ export class LoginPage implements OnInit {
   }
 
   IrHomePage() {
+    // Almacena el objeto user en el localStorage
+    localStorage.setItem('userData', JSON.stringify(this.user));
+
     let navegationExtras: NavigationExtras = {
       state: {
         user: this.user
       }
     }
+
     this.router.navigate(['/home'], navegationExtras);
   } 
 
