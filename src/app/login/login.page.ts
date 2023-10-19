@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,24 +7,15 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-
-  validacion: FormGroup;
-
   user = {
     username: "",
     password: ""
   }
 
-  constructor(private router: Router, private formBuilder: FormBuilder) {
-    this.validacion = this.formBuilder.group({
-      username: ['', [Validators.required]],
-      password: ['', [Validators.required]]
-    });
-  }
+  constructor(private router: Router) {}
 
-  IrHomePage() {
-    // Almacena el objeto user en el localStorage
-    localStorage.setItem('userData', JSON.stringify(this.user));
+  async IrHomePage() {
+    localStorage.setItem('MiGuard', 'true');
 
     let navegationExtras: NavigationExtras = {
       state: {
@@ -39,3 +29,4 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 }
+

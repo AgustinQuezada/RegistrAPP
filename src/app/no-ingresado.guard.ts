@@ -1,23 +1,21 @@
-import { Injectable} from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
 import { NavController } from '@ionic/angular';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-
-export class MiGuardGuard implements CanActivate {
-  constructor (public navCtrl: NavController) {}
-
+export class NoIngresadoGuard implements CanActivate {
+  constructor (public navCtrl: NavController) {}  
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       if (localStorage.getItem('MiGuard')) {
-        return true;
-      } else {
-        this.navCtrl.navigateRoot('login');
+        this.navCtrl.navigateRoot('home');
         return false;
+      } else {
+        return true;
       }
   }
   
