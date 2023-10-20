@@ -1,4 +1,4 @@
-import { Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { NavController } from '@ionic/angular';
@@ -8,17 +8,15 @@ import { NavController } from '@ionic/angular';
 })
 
 export class MiGuardGuard implements CanActivate {
-  constructor (public navCtrl: NavController) {}
-
+  constructor (public navCtrl: NavController){}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if (localStorage.getItem('MiGuard')) {
-        return true;
-      } else {
-        this.navCtrl.navigateRoot('login');
-        return false;
-      }
-  }
-  
+    if(localStorage.getItem('MyGuard')) {
+      return true; 
+    }else {
+      this.navCtrl.navigateRoot('login');
+      return false;
+    }
+    }
 }

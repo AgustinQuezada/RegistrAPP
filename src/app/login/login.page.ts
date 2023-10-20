@@ -15,13 +15,13 @@ export class LoginPage implements OnInit {
   constructor(private router: Router) {}
 
   async IrHomePage() {
-    localStorage.setItem('MiGuard', 'true');
-
+    localStorage.setItem('MyGuard', 'true');
     let navegationExtras: NavigationExtras = {
       state: {
-        user: this.user
-      }
-    }
+        user: this.user,
+      },
+    };
+
     this.router.navigate(['/home'], navegationExtras);
   } 
 

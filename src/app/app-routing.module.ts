@@ -22,12 +22,12 @@ const routes: Routes = [
   {
     path: 'recuperacion',
     loadChildren: () => import('./recuperacion/recuperacion.module').then( m => m.RecuperacionPageModule),
-    canActivate: [ NoIngresadoGuard ] //no requiere que ingrese el usuario
+    canActivate: [ NoIngresadoGuard ]//no requiere que ingrese el usuario
   },
   {
     path: 'error404',
     loadChildren: () => import('./error404/error404.module').then( m => m.Error404PageModule),
-    canActivate: [ NoIngresadoGuard ] //no requiere que ingrese el usuario
+    //no requiere que ingrese el usuario
   },
   {
     path: '**',
