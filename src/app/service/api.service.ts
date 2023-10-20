@@ -12,6 +12,8 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getPosts(): Observable<any> {
-    return this.http.get(this.apiURL+'/posts/').pipe(retry(3));
+    return this.http.get(this.apiURL).pipe(retry(3));
   }
+
+
 }

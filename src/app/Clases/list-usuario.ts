@@ -1,3 +1,3 @@
-export class Credencial {
+export class user_credentials {
     
 }
